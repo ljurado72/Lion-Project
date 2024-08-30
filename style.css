@@ -19,6 +19,7 @@ body {
     padding: 0 20px;
     background-color: #201e1e;
     height: 80px;
+    position: relative;
 
 }
 
@@ -243,7 +244,6 @@ body {
     font-size: 2em;
     margin-bottom: 20px;
     color: goldenrod;
-    font-family: 'Georgia', serif;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     text-align: center;
 }
@@ -483,8 +483,42 @@ footer p {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .nav-links {
+        display: none;
         flex-direction: column;
-        gap: 20px;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #201e1e;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+
+    }
+
+    .burger-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .burger-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #ffd700;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    /* Toggle menu when checkbox is checked */
+    .nav-toggle:checked+.burger-icon+.nav-links {
+        display: flex;
     }
 
     .hero h1 {
@@ -496,17 +530,22 @@ footer p {
     }
 
     .story-image {
-        width: 100%;
         float: none;
-        margin: 10px 0;
+        margin: 0 auto;
+
     }
 
     .about-item {
-        padding: 10px;
+        flex-direction: column;
+        padding: 40px;
     }
 
     .interactive-container {
         width: 100%;
         height: auto;
+    }
+
+    .cta-content {
+        flex-direction: column;
     }
 }
